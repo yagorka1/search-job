@@ -3,9 +3,12 @@ import './App.css';
 import { Nav } from './components/Nav/Nav.tsx';
 import { About } from './pages/About/About.tsx';
 import { Home } from './pages/Home/Home.tsx';
+import { Provider } from 'react-redux';
+import { store } from './store/store.ts';
 
 function App() {
   return (
+    <Provider store={store}>
     <BrowserRouter>
       <div className="h-screen flex flex-col overflow-hidden">
         <Nav></Nav>
@@ -18,6 +21,7 @@ function App() {
         </div>
       </div>
     </BrowserRouter>
+    </Provider>
   )
 }
 
